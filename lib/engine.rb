@@ -1,15 +1,16 @@
 #lib/authr/engine.rb
-require "bazarcms"
+require "bazarperfiles"
 require "rails"
 require 'action_controller'
 require 'application_helper'
 
 
-module Bazarcms
+module Bazarperfiles
   class Engine < Rails::Engine
-   puts "Bazarcms:: inicializo el engine 1 <---------------------------"
+   puts "Bazarperfiles:: inicializo el engine 2 <---------------------------"
     # Configuracion por defecto 
-    config.bazarcms_factory_name = "Bazarcms"
+    
+    config.bazarperfiles_factory_name = "Bazarperfiles"
     config.montar_en = '/'
     
     # Ejecuto los task que tengamos

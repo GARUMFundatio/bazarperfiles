@@ -1,4 +1,4 @@
-namespace :bazarcms do
+namespace :bazarperfiles do
   
   desc "para las tareas que tengamos que ejecutar"
   task :report => :environment do

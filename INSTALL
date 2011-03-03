@@ -13,26 +13,26 @@
 
 * Compilación de bazarcms 	
 
-	En el directorio de bazarcms ejecutar: 
+	En el directorio de bazarperfiles ejecutar: 
 	
 	sudo rake install 
 	
 	Para desinstalarla: 
 	
-	gem uninstall bazarcms 
+	gem uninstall bazarperfiles 
 	
-* Como incluir el engine en bazarcms
+* Como incluir el engine en bazarperfiles
 
 	De momento no existe una instalación automátizada y hay que 
 editar el fichero Gemfile: 
 
-	gem "bazarcms", :require => "bazarcms", :path => "/path/to/bazarcms"
+	gem "bazarperfiles", :require => "bazarperfiles", :path => "/path/to/bazarperfiles"
 
 	Ejecutar Bundle en el directorio de la aplicación bazar: 
 	
 	bundle install 
 	
-        rails generate bazarcms
+        rails generate bazarperfiles
         
         RAILS_ENV=production rake db:migrate 
 

@@ -1,8 +1,7 @@
-Módulo CMS para el proyecto bazar
+Módulo Perfiles para el proyecto bazar
 ---------------------------------
 
-Este módulo exporta las funcionalidades de un CMS muy sencillo 
-a los usuarios de bazar.
+Este módulo exporta las funcionalidades para gestionar perfiles de empresas.
 
 
     Copyright (C) 2010,2011 Garum Fundatio 
