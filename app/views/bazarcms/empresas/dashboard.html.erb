@@ -1,0 +1,50 @@
+<h3 class="page-title">Empresas</h3>
+
+<table class="base" cellspacing="0">
+<tr>
+	<td>
+		<table class="tabla" cellspacing="0">
+		<tr>
+			<th colspan="2">
+				Ultimas Empresas
+			</th>
+		</tr>	
+		<% for emp in @ultimas %>
+		<tr>
+			<td>
+				<!-- TODO: hay que tener en cuenta cuando la empresa es de otro bazar !! -->
+				
+				<%= link_to emp.nombre, bazarcms_empresa_path(emp.id) %>
+			</td>
+			<td> 
+				<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{emp.id}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
+				<%= helper_favo(BZ_param("BazarId"), emp.id, emp.nombre, "ult") %>
+			</td>
+		</tr>
+		<% end %>
+		</table>
+	</td>
+	<td>
+		<table class="tabla" cellspacing="0">
+		<tr>
+			<th colspan="2">
+				Ultimas Actualizadas
+			</th>
+		</tr>	
+		<% for emp in @actualizadas %>
+		<tr>
+			<td>
+				<%= link_to emp.nombre, bazarcms_empresa_path(emp.id) %>
+			</td>
+			<td>
+				<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{emp.id}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
+				<%= helper_favo(BZ_param("BazarId"), emp.id, emp.nombre, "act") %>
+			</td>
+		</tr>
+		<% end %>
+		</table>
+	
+	</td>	
+</tr>	
+</table>
+<p class="total">Total: <%= @total %></p>

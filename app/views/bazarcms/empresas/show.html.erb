@@ -1,0 +1,116 @@
+
+<h3 class="titulo-destacado"><%= @empresa.nombre %></h3>
+
+<h4 class="titulo-seccion">Empresa</h4>
+
+<table class="tabla" cellspacing="0">
+<tr>
+	<th scope="row">
+		Descripción:
+	</th>
+	<td colspan=4>	
+		<%= @empresa.desc %>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">
+		Fundada:
+	</th>
+	<td>	
+		<%= @empresa.fundada %>
+	</td>
+</tr>
+
+<tr>
+    <th scope="row">
+		Moneda:
+	</th>
+	<td>
+		<%= Bazarcms::Empresa.Monedastexto(@empresa.moneda) %>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">
+		Página Web:
+	</th>
+	<td colspan="3">	
+		<%= link_to(@empresa.url,  @empresa.url) %>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">
+		Email:
+	</th>
+	<td colspan="3">	
+		<%= @usuario.email %>
+	</td>
+</tr>
+
+
+<tr>
+	<th scope="row">
+		Ofrecen:
+	</th>
+	<td colspan="4">	
+		<%= @empresa.actividad_list %>
+	</td>
+</tr>
+
+<tr>
+	<th scope="row">
+		Demandan:
+	</th>
+	<td colspan="4">	
+		<%= @empresa.interes_list %>
+	</td>
+</tr>
+
+
+</table>
+
+<h4 class="titulo-seccion">Datos Económicos</h4>
+
+<table class="tabla" cellspacing="0">
+	<tr>
+		<th>Año</th>
+		<th>Empleados</th>
+		<th>Compras</th>
+		<th>Ventas</th>
+		<th>Resultados</th>
+	</tr>
+
+	<% for emp in @empresasdatos do %>
+
+	<tr>
+		<th scope="row"> <%= emp.periodo %> </th>
+		<td class="datostd"> <%= Bazarcms::Empresasdato.REtexto(emp.empleados) %> </td>
+		<td class="datostd"> <%= Bazarcms::Empresasdato.RDtexto(emp.compras) %> </td>
+		<td class="datostd"> <%= Bazarcms::Empresasdato.RDtexto(emp.ventas) %> </td>
+		<td class="datostd"> <%= Bazarcms::Empresasdato.RDtexto(emp.resultados) %> </td>
+	</tr>
+
+	<% end %>
+</table>
+
+<h4 class="titulo-seccion">Ubicaciones</h4>
+
+<table class="tabla" cellspacing="0">
+
+<% for ubi in @empresa.ubicaciones %>
+<tr>
+<th scope="row">
+	<%= ubi.desc %>
+</th>
+
+<td>
+	<%= ubi.ciudad.descripcion -%>, <%= ubi.ciudad.pais.descripcion -%>
+</td>
+
+</tr>
+<% end %>
+</table>
+
+
